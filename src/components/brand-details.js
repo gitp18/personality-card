@@ -20,7 +20,7 @@ function BrandDetails(props) {
       );
     });
   }
-  else var itemList = () => {return <></>}
+  else var itemList = <>No brands</>
 
   return (<>
         <h3>Brands</h3>
