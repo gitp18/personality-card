@@ -13,4 +13,31 @@ const getAge = (dateString) => {
   }
   return age;
 }
-export {getAge};
+
+/**********************************************************************************************
+ * @Purpose: Change the date of birth format
+ * @Input: dateString: "yyyy-mm-dd"
+ * @Output: "yyyy/mm/dd"
+***********************************************************************************************/
+const dateFormat = (dateString) => {
+  if(dateString) {
+    const string_after_splitting = dateString.split('-');
+    return string_after_splitting.join('/');
+  } else return '';
+}
+
+/**********************************************************************************************
+ * @Purpose: Remove the x... string from the phone number
+ * @Input: phone_number: "string"
+ * @Output: "phone_number"": "string"
+***********************************************************************************************/
+const phoneNumberFormat = (phone_number) => {
+  if(phone_number && phone_number.includes('x')) {
+    const string_after_splitting = phone_number.split('x');
+    return string_after_splitting[0];
+  } else{
+    return phone_number;
+  }
+}
+
+export {getAge, dateFormat, phoneNumberFormat};
