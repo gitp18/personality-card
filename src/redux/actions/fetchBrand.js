@@ -14,7 +14,6 @@ export function fetchBrand() {
     axios
       .get(API_END_POINT)
       .then(response => {
-        console.log(response)
         dispatch(fetchBrandDataSuccess(response.data));
       })
       .catch(error => {
