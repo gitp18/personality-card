@@ -13,18 +13,22 @@ function BrandDetails(props) {
   
   if(brandData && brandData.length) {
     var itemList = brandData.map((i, j) => {
-      return (
-            <div key={j}>
-              <p>{i.brand}</p>
-            </div>
+      return (    
+        <li className="cc-brand__list__item" key={j}>{i.brand}</li>
       );
     });
   }
   else var itemList = <>No brands</>
 
   return (<>
+      <div className="cc-brand">
         <h3>Brands</h3>
-        {itemList}
+        {itemList ? 
+          <ul className="cc-brand__list" >
+          {itemList}
+          </ul>
+        : null }
+      </div>
     </>
   );
 }

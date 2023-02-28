@@ -15,10 +15,16 @@ function ProfileOverview(props) {
   const age = getAge(date_of_birth).toString();
 
   return (<>
-        <img src={avatar} alt="DP" />
-        <h3>{first_name} {last_name}</h3>
-        <p>{age} / {gender}</p>
-        <p><ProfileDesc /></p>
+        <div className="cc-profile__wrap">
+          <div className="cc-profile__pic">
+            <img src={avatar} alt="DP" className="cc-profile__pic__img" />
+          </div>
+          <div className="cc-profile__label">
+            <h3>{first_name} {last_name}</h3>
+            <p>{age} / {gender}</p>
+          </div>
+        </div>
+        <div className="cc-profile__description"><ProfileDesc /></div>
     </>
   );
 }
