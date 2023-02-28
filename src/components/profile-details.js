@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { dateFormat, phoneNumberFormat } from "../common";
 
 
 
@@ -16,8 +17,8 @@ function ProfileDetails(props) {
   return (<>
         <h3>Details</h3>
         <p>Username: {username}</p>
-        <p>Date of Birth: {date_of_birth}</p>
-        <p>Phone: {phone_number}</p>
+        <p>Date of Birth: {dateFormat(date_of_birth)}</p>
+        <p>Phone: {phoneNumberFormat(phone_number)}</p>
         <p>Email: {email}</p>
         <p>Subscription: {subscriptionPlan}</p>
         <p>Location: {completeAddress}</p> 
