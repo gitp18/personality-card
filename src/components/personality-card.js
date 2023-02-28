@@ -28,9 +28,12 @@ function PersonalityCard(props){
       <ProfileOverview />
       <ProfileDetails />
       <BrandDetails />
-      <button onClick={getStudentData}>
-        Random Student
-      </button>
+      <div className="cc-btn__holder">
+        <button className="font-['Montserrat'] text-[30px] leading-[49px] text-white font-bold text-center px-4 py-1 relative rounded-md overflow-hidden group bg-[var(--secondary-btn-color)] hover:bg-gradient-to-r hover:from-[var(--secondary-btn-color)] hover:to-[var(--secondary-btn-color)] hover:ring-2 hover:ring-offset-2 hover:ring-[var(--secondary-btn-color)] transition-all ease-out duration-300" onClick={getStudentData}>
+        <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+          <span className="relative">Random Student</span>
+        </button>
+      </div>
     </div>
     </>
   )

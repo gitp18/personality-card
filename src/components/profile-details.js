@@ -14,13 +14,33 @@ function ProfileDetails(props) {
   const subscriptionPlan = (subscription && subscription.plan != null) ? subscription.plan : '';
 
   return (<>
+      <div className="cc-profile__details">
         <h3>Details</h3>
-        <p>Username: {username}</p>
-        <p>Date of Birth: {date_of_birth}</p>
-        <p>Phone: {phone_number}</p>
-        <p>Email: {email}</p>
-        <p>Subscription: {subscriptionPlan}</p>
-        <p>Location: {completeAddress}</p> 
+        <div className="cc-profile__details__row">
+          <div className="cc-profile__details__label">Username: </div>
+          <div className="cc-profile__details__value">{username}</div>
+        </div>
+        <div className="cc-profile__details__row">
+          <div className="cc-profile__details__label">Date of Birth:</div> 
+          <div className="cc-profile__details__value"> {date_of_birth}</div>
+        </div>
+        <div className="cc-profile__details__row">
+          <div className="cc-profile__details__label">Phone:</div> 
+          <div className="cc-profile__details__value"> {phone_number}</div>
+        </div>
+        <div className="cc-profile__details__row">
+          <div className="cc-profile__details__label">Email:</div> 
+          <div className="cc-profile__details__value"> {email}</div>
+        </div>
+        <div className="cc-profile__details__row">
+          <div className="cc-profile__details__label">Subscription:</div> 
+          <div className="cc-profile__details__value"> {subscriptionPlan}</div>
+        </div>
+        <div className="cc-profile__details__row">
+          <div className="cc-profile__details__label">Location:</div> 
+          <div className="cc-profile__details__value"> {completeAddress}</div> 
+        </div>
+      </div>
     </>
   );
 }

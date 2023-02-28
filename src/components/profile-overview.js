@@ -17,7 +17,7 @@ function ProfileOverview(props) {
   return (<>
         <div className="cc-profile__wrap">
           <div className="cc-profile__pic">
-            <img src={avatar} alt="DP" />
+            <img src={avatar} alt="DP" className="cc-profile__pic__img" />
           </div>
           <div className="cc-profile__label">
             <h3>{first_name} {last_name}</h3>
