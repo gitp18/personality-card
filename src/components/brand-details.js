@@ -11,8 +11,7 @@ import { connect } from "react-redux";
 function BrandDetails(props) {  
   const { brandData } = props;
   
-  if(brandData.count) var itemList = () => {return <></>}
-  else{
+  if(brandData && brandData.length) {
     var itemList = brandData.map((i, j) => {
       return (
             <div key={j}>
@@ -21,6 +20,8 @@ function BrandDetails(props) {
       );
     });
   }
+  else var itemList = () => {return <></>}
+
   return (<>
         <h3>Brands</h3>
         {itemList}
