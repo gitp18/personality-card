@@ -26,11 +26,11 @@ function ProfileDetails(props) {
         </div>
         <div className="cc-profile__details__row">
           <div className="cc-profile__details__label">Phone:</div> 
-          <div className="cc-profile__details__value"> {phone_number}</div>
+          <div className="cc-profile__details__value"> <a href={`tel:${phone_number}`}>{phone_number}</a></div>
         </div>
         <div className="cc-profile__details__row">
           <div className="cc-profile__details__label">Email:</div> 
-          <div className="cc-profile__details__value"> {email}</div>
+          <div className="cc-profile__details__value"> <a href={`mailto:${email}`}>{email}</a></div>
         </div>
         <div className="cc-profile__details__row">
           <div className="cc-profile__details__label">Subscription:</div> 

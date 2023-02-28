@@ -60,13 +60,16 @@ body  {
     @apply text-[48px] leading-[79px] text-[var(--secondary-color)] font-bold mb-[18px];
 }
 .cc-profile__details__row {
-    @apply py-[4px] flex flex-row justify-start items-start;
+    @apply py-[4px] flex flex-col justify-start items-start mb-5 lg:flex-row lg:mb-0;
 }
 .cc-profile__details__label {
-    @apply flex-[0_0_215px] w-[215px] mr-[65px] text-[36px] leading-[59px] text-[var(--primary-color)] font-bold;
+    @apply flex w-auto mr-[65px] text-[24px] leading-[32px] text-[var(--primary-color)] font-bold lg:w-[215px] lg:flex-[0_0_215px] lg:text-[36px] lg:leading-[59px];
 }
 .cc-profile__details__value {
-    @apply text-[36px] leading-[59px] text-[var(--primary-color)] font-normal pr-[40px];
+    @apply text-[24px] leading-[32px] text-[var(--primary-color)] font-normal pr-[40px] lg:text-[36px] lg:leading-[59px];
+}
+.cc-profile__details__value a {
+    @apply hover:text-[var(--secondary-color)];
 }
 /* -- Brand -- */
 .cc-brand {
