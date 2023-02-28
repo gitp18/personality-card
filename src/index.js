@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
-//import './index.css';
+import './index.css';
 
 import PersonalityCard from "./components/personality-card.js";
 import { Provider } from "react-redux";

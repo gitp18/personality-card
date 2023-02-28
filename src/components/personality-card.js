@@ -24,12 +24,14 @@ function PersonalityCard(props){
   };
 
   return (<>
+    <div className="cc-wrapper">
       <ProfileOverview />
       <ProfileDetails />
       <BrandDetails />
       <button onClick={getStudentData}>
         Random Student
       </button>
+    </div>
     </>
   )
 }

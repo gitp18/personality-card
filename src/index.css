@@ -1,3 +1,34 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* 
+* Card CSS
+*
+*/
+/* --- Variable -- */
+:root {
+    --primary-color: #505050;
+    --secondary-color: #FFA789;
+    --grey-bg: #E5E5E5;
+
+}
+/* -- Reset -- */
+body  {
+    background: var(--grey-bg);
+}
+/* -- Card Container */
+.cc-wrapper {
+    @apply container mx-auto bg-white rounded-[50px] mt-[84px] px-[50px] py-[80px];
+    max-width: 900px;
+    padding: 0 90px;
+}
+
+
+/* -- Profile Card -- */
+.cc-profile__wrap {
+    @apply pb-[68px] flex flex-row justify-start items-center;
+}
+.cc-profile__pic {
+    @apply rounded-[100%] overflow-hidden;
+}
