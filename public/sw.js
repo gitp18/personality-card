@@ -22,7 +22,7 @@ this.addEventListener("install", (event) => {
  * @Output: response from the cache
 ***********************************************************************************************/
 this.addEventListener("fetch", (event)=>{
-    if(event.request.url === 'https://random-data-api.com/api/v2/users' || event.request.url === 'https://random-data-api.com/api/v2/appliances?size=5') {
+    //if(event.request.url === 'https://random-data-api.com/api/v2/users' || event.request.url === 'https://random-data-api.com/api/v2/appliances?size=5') {
 
         event.respondWith(caches.open(cacheName).then((cache) => {
             // Go to the cache first
@@ -69,6 +69,6 @@ this.addEventListener("fetch", (event)=>{
             });
           }));
       
-    } else {   return;    }
+    //} else {   return;    }
 })
 
