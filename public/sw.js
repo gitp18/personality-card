@@ -8,7 +8,6 @@ this.addEventListener("install", (event) => {
     event.waitUntil(
         caches.open(cacheName).then((cache) => {
             return cache.addAll([
-                '/favicon.ico',
                 '/static/js/bundle.js',
                 '/index.html',
                 '/',
