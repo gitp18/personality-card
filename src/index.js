@@ -5,9 +5,6 @@ import './index.css';
 import PersonalityCard from "./components/personality-card.js";
 import { Provider } from "react-redux";
 import store from "./redux/store";
-
-//import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-//import * as serviceWorker from './serviceWorker';
 import swDev from './swDev';
 
 
@@ -22,6 +19,4 @@ root.render(
 );
 
 reportWebVitals();
-//serviceWorker.register();
-// registerValidSW(url. hghg)
 swDev();

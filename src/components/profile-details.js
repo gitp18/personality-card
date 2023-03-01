@@ -1,22 +1,24 @@
 import React from "react";
-import { connect } from "react-redux";
 import { dateFormat, phoneNumberFormat } from "../common";
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
+import { useSelector } from "react-redux";
 
 
 
 /**********************************************************************************************
  * @Purpose: To render the Profile Details
- * @Input: The default props
+ * @Input: N/A
  * @Output: N/A
 ***********************************************************************************************/
-function ProfileDetails(props) {  
-  const { username, date_of_birth, phone_number, email, address, subscription } = props.userData;
-  const loading = props.loading;
+function ProfileDetails() { 
+  const userData = useSelector((state) => state.reducer.userData);
+  const loading = ((typeof userData === 'object' && userData.id === undefined)) ? true : false;
+  const { username, date_of_birth, phone_number, email, address, subscription } = userData;
   const completeAddress = (address && address.city != null) ? address.street_name + ', ' + address.street_address + ', ' + address.city + ', ' + address.zip_code + ', ' + address.state : '';
   const subscriptionPlan = (subscription && subscription.plan != null) ? subscription.plan : '';
   const phoneNumber = phoneNumberFormat(phone_number);
+  
   if(loading){
     return(
       <div className="cc-profile__details">
@@ -81,13 +83,4 @@ function ProfileDetails(props) {
 }
 }
 
-/**********************************************************************************************
- * @Purpose: Converts the Redux state to React props, so that user data can be fetched from it
- * @Input: The Redux state object
- * @Output: The React props object
-***********************************************************************************************/
-const mapStateToProps = state => ({
-  userData: state.reducer.userData
-});
-
-export default connect(mapStateToProps)(ProfileDetails);
+export default ProfileDetails;

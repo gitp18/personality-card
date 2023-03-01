@@ -1,16 +1,19 @@
 import React from "react";
-import { connect } from "react-redux";
 import Skeleton from "react-loading-skeleton";
+import { useSelector } from "react-redux";
+
+
 
 /**********************************************************************************************
  * @Purpose: To render the list of brands
- * @Input: The default props
+ * @Input: N/A
  * @Output: N/A
  ***********************************************************************************************/
-function BrandDetails(props) {
-  const { brandData, loading } = props;
-
+function BrandDetails() {
+  const brandData = useSelector((state) => state.reducer.brandData);
+  let loading = true;
   if (brandData && brandData.length) {
+    loading = false;
     var itemList = brandData.map((i, j) => {
       return (
         <li className="cc-brand__list__item" key={j}>
@@ -42,12 +45,4 @@ function BrandDetails(props) {
   }
 }
 
-/**********************************************************************************************
- * @Purpose: Converts the Redux state to React props, so that brand list can be fetched from it
- * @Input: The Redux state object
- * @Output: The React props object
- ***********************************************************************************************/
-const mapStateToProps = (state) => ({
-  brandData: state.reducer.brandData,
-});
-export default connect(mapStateToProps)(BrandDetails);
+export default BrandDetails;

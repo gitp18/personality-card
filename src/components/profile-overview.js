@@ -1,19 +1,21 @@
 import React from "react";
-import { connect } from "react-redux";
 import ProfileDesc from "./profile-desc";
 import { getAge } from "../common";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { useSelector } from "react-redux";
+
+
 
 /**********************************************************************************************
  * @Purpose: To render the Profile Overview
- * @Input: The default props
+ * @Input: N/A
  * @Output: N/A
  ***********************************************************************************************/
-function ProfileOverview(props) {
-  const { date_of_birth, avatar, first_name, last_name, gender } =
-    props.userData;
-  const loading = props.loading;
+function ProfileOverview() {
+  const userData = useSelector((state) => state.reducer.userData);
+  const loading = ((typeof userData === 'object' && userData.id === undefined)) ? true : false;
+  const { date_of_birth, avatar, first_name, last_name, gender } = userData;
   const age = getAge(date_of_birth).toString();
   if (loading) {
     return (
@@ -64,13 +66,4 @@ function ProfileOverview(props) {
   }
 }
 
-/**********************************************************************************************
- * @Purpose: Converts the Redux state to React props, so that user data can be fetched from it
- * @Input: The Redux state object
- * @Output: The React props object
- ***********************************************************************************************/
-const mapStateToProps = (state) => ({
-  userData: state.reducer.userData,
-});
-
-export default connect(mapStateToProps)(ProfileOverview);
+export default ProfileOverview;
