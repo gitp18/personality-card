@@ -23,6 +23,7 @@ function ProfileOverview(props) {
             circle
             width={200}
             height={200}
+            className="mr-4"
             containerClassName="avatar-skeleton"
           />
           <div className="cc-profile__label">
