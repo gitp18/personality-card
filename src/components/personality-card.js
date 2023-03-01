@@ -5,7 +5,6 @@ import ProfileDetails from "./profile-details.js";
 import BrandDetails from "./brand-details.js";
 import { fetchProfile } from "../redux/actions/fetchData";
 import { fetchBrand } from "../redux/actions/fetchBrand";
-import Skeleton from "react-loading-skeleton";
 
 
 
