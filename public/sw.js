@@ -13,19 +13,8 @@ this.addEventListener("install", (event) => {
                 '/',
             ])
         })
-          /*  fetch(event.request)
-                .then((fetchedResponse) => {
-                // Add the network response to the cache for later visits
-                cache.put(event.request, fetchedResponse.clone());
-        
-                // Return the network response
-                //return fetchedResponse;
-                }).catch((e)=>{
-
-                })*/
     )
 })
-addEventListener("click", (event) => {alert(546557)});
 
 /**********************************************************************************************
  * @Purpose: To read from cache
@@ -33,7 +22,7 @@ addEventListener("click", (event) => {alert(546557)});
  * @Output: response from the cache
 ***********************************************************************************************/
 this.addEventListener("fetch", (event)=>{
-    //if(event.request.url === 'https://random-data-api.com/api/v2/users' || event.request.url === 'https://random-data-api.com/api/v2/appliances?size=5') {
+    if(event.request.url === 'https://random-data-api.com/api/v2/users' || event.request.url === 'https://random-data-api.com/api/v2/appliances?size=5') {
 
         event.respondWith(caches.open(cacheName).then((cache) => {
             // Go to the cache first
@@ -62,11 +51,7 @@ this.addEventListener("fetch", (event)=>{
 
                     });
                 }
-
-                
               })
-
-
           
               // Otherwise, hit the network
               return fetch(event.request)
@@ -84,31 +69,6 @@ this.addEventListener("fetch", (event)=>{
             });
           }));
       
-    /*//if(!navigator.onLine){
-        event.respondWith((async () => {
-            const cachedResponse = await caches.match(event.request);
-            if (cachedResponse) {
-                console.log('log4: if', cachedResponse)
-                return cachedResponse;
-            } else{
-                console.log('log5: else')
-            }
-        
-            /*const response = await fetch(event.request);
-        
-            if (!response || response.status !== 200 || response.type !== 'basic') {
-                return response;
-            }
-        
-            if(ENABLE_DYNAMIC_CACHING) {
-                const responseToCache = response.clone();
-                const cache = await caches.open(DYNAMIC_CACHE)
-                await cache.put(event.request, response.clone());
-            }
-        
-            return response;//
-        })());
-    //}*/
-    //} else {   return;    }
+    } else {   return;    }
 })
 
