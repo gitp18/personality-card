@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import ProfileOverview from "./profile-overview.js";
 import ProfileDetails from "./profile-details.js";
 import BrandDetails from "./brand-details.js";
 import { fetchProfile } from "../redux/actions/fetchData";
 import { fetchBrand } from "../redux/actions/fetchBrand";
+import Skeleton from "react-loading-skeleton";
 
 
 
@@ -16,7 +17,12 @@ import { fetchBrand } from "../redux/actions/fetchBrand";
 function PersonalityCard(props){
   useEffect(()=> {
       getStudentData();
+      const timer = setTimeout(() => {
+        setLoading(false);
+      }, 700);
+      return () => clearTimeout(timer);
   }, []);
+  const [loading, setLoading] = useState(true);
 
   const getStudentData = () => {
     props.dispatch(fetchProfile());
@@ -25,15 +31,17 @@ function PersonalityCard(props){
 
   return (<>
     <div className="cc-wrapper">
-      <ProfileOverview />
-      <ProfileDetails />
-      <BrandDetails />
+      <ProfileOverview loading={loading} />
+      <ProfileDetails loading={loading} />
+      <BrandDetails loading={loading} />
+      {loading ? <div className="cc-btn__holder"><Skeleton width={300} height={100} /> </div>:
       <div className="cc-btn__holder">
         <button className="font-['Montserrat'] text-[30px] leading-[49px] text-white font-bold text-center px-4 py-1 relative rounded-md overflow-hidden group bg-[var(--secondary-btn-color)] hover:bg-gradient-to-r hover:from-[var(--secondary-btn-color)] hover:to-[var(--secondary-btn-color)] hover:ring-2 hover:ring-offset-2 hover:ring-[var(--secondary-btn-color)] transition-all ease-out duration-300" onClick={getStudentData}>
         <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
           <span className="relative">Random Student</span>
         </button>
       </div>
+      }
     </div>
     </>
   )
