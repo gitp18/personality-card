@@ -23,17 +23,16 @@ body  {
 }
 /* -- Card Container */
 .cc-wrapper {
-    @apply container mx-auto bg-white rounded-[50px] mt-[84px] px-[50px] py-[80px];
-    max-width: 900px;
+    @apply container mx-auto bg-white rounded-[50px] my-[84px] px-[50px] py-[80px] max-w-[900px];
 }
 
 
 /* -- Profile Card -- */
 .cc-profile__wrap {
-    @apply pb-[68px] flex flex-row justify-start items-center;
+    @apply pb-[68px] flex flex-col justify-start items-center lg:flex-row;
 }
 .cc-profile__pic {
-    @apply rounded-[100%] overflow-hidden ml-[40px] mr-[48px] my-4  bg-[var(--secondary-color)];
+    @apply rounded-[100%] overflow-hidden ml-auto mr-auto my-4 bg-[var(--secondary-color)] lg:ml-[40px] lg:mr-[48px];
 }
 .cc-profile__pic__img {
     @apply w-[200px] h-[200px];
@@ -42,13 +41,13 @@ body  {
     @apply font-['Catamaran'];
 }
 .cc-profile__label h3{
-    @apply text-[50px] leading-[82px] text-[var(--back-o-8)] font-bold;
+    @apply text-[40px] leading-[52px] text-[var(--back-o-8)] font-bold text-center lg:text-[50px] lg:leading-[82px] lg:text-start;
 }
 .cc-profile__label p{
-    @apply text-[35px] leading-[57px] text-[var(--ass)] font-normal;
+    @apply text-[28px] leading-[47px] text-[var(--ass)] font-normal text-center lg:text-[35px] lg:leading-[57px] lg:text-start;
 }
 .cc-profile__description {
-    @apply text-[36px] leading-[59px] text-[var(--content-color)] font-normal mb-[106px];
+    @apply text-[24px] leading-[32px] text-[var(--content-color)] font-normal mb-[106px] text-center lg:text-[36px] lg:leading-[59px] lg:text-start;
 }
 
 /* -- Details -- */
@@ -57,16 +56,16 @@ body  {
 }
 .cc-profile__details h3,
 .cc-brand h3  {
-    @apply text-[48px] leading-[79px] text-[var(--secondary-color)] font-bold mb-[18px];
+    @apply text-[48px] leading-[79px] text-[var(--secondary-color)] font-bold mb-[18px] text-center lg:text-start;
 }
 .cc-profile__details__row {
-    @apply py-[4px] flex flex-col justify-start items-start mb-5 lg:flex-row lg:mb-0;
+    @apply py-[4px] flex flex-col justify-start items-center mb-5 lg:flex-row lg:mb-0 lg:items-start;
 }
 .cc-profile__details__label {
-    @apply flex w-auto mr-[65px] text-[24px] leading-[32px] text-[var(--primary-color)] font-bold lg:w-[215px] lg:flex-[0_0_215px] lg:text-[36px] lg:leading-[59px];
+    @apply flex w-auto mr-0 text-[24px] leading-[32px] text-[var(--primary-color)] font-bold text-center lg:w-[215px] lg:flex-[0_0_215px] lg:text-[36px] lg:leading-[59px] lg:text-start lg:mr-[65px];
 }
 .cc-profile__details__value {
-    @apply text-[24px] leading-[32px] text-[var(--primary-color)] font-normal pr-[40px] lg:text-[36px] lg:leading-[59px];
+    @apply text-[24px] leading-[32px] text-[var(--primary-color)] font-normal pr-0 text-center lg:text-[36px] lg:leading-[59px] lg:text-start lg:pr-[40px];
 }
 .cc-profile__details__value a {
     @apply hover:text-[var(--secondary-color)];
@@ -76,10 +75,10 @@ body  {
     @apply font-['Catamaran'] mb-[58px];
 }
 .cc-brand__list {
-    @apply flex flex-wrap flex-row;
+    @apply flex flex-wrap flex-row justify-center items-center lg:items-start lg:justify-start;
 }
 .cc-brand__list__item {
-    @apply px-4 py-2 bg-black/[.05] mr-[16px] text-[30px] leading-[49px] text-[var(--primary-color)] font-normal rounded-md;
+    @apply px-4 py-2 bg-black/[.05] mr-[16px] text-[20px] leading-[39px] text-[var(--primary-color)] font-normal rounded-md mb-4 lg:text-[30px] lg:leading-[49px];
 }
 
 /* -- button -- */
