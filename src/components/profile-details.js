@@ -13,7 +13,8 @@ function ProfileDetails(props) {
   const { username, date_of_birth, phone_number, email, address, subscription } = props.userData;
   const completeAddress = (address && address.city != null) ? address.street_name + ', ' + address.street_address + ', ' + address.city + ', ' + address.zip_code + ', ' + address.state : '';
   const subscriptionPlan = (subscription && subscription.plan != null) ? subscription.plan : '';
-
+  const phoneNumber = phoneNumberFormat(phone_number);
+  
   return (<>
       <div className="cc-profile__details">
         <h3>Details</h3>
@@ -23,11 +24,11 @@ function ProfileDetails(props) {
         </div>
         <div className="cc-profile__details__row">
           <div className="cc-profile__details__label">Date of Birth:</div> 
-          <div className="cc-profile__details__value"> {date_of_birth}</div>
+          <div className="cc-profile__details__value"> {dateFormat(date_of_birth)}</div>
         </div>
         <div className="cc-profile__details__row">
           <div className="cc-profile__details__label">Phone:</div> 
-          <div className="cc-profile__details__value"> <a href={`tel:${phone_number}`}>{phone_number}</a></div>
+          <div className="cc-profile__details__value"> <a href={`tel:${phoneNumber}`}>{phoneNumber}</a></div>
         </div>
         <div className="cc-profile__details__row">
           <div className="cc-profile__details__label">Email:</div> 
